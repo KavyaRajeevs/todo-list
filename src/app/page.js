@@ -16,11 +16,16 @@
         setTodos(newTodos);
       };
 
+
+      const handleClearTodos = () => {
+        setTodos([]);
+      };
+
       return (
     <div className="min-h-screen bg-gray-100 py-8 px-4">
       <div className="max-w-md mx-auto">
         <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">Todo App</h1>
-        <TodoForm onAdd={handleAddTodo} />
+        <TodoForm onAdd={handleAddTodo} clear={handleClearTodos} />
         <TodoList todos={todos} onDelete={handleDeleteTodo} />
       </div>
       <Footer />
